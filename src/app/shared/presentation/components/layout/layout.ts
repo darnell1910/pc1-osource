@@ -14,8 +14,6 @@ import {environment} from '../../../../../environments/environment';
  * main landmark where the active view is projected, and the footer. The projected view
  * is supplied by the root component, so this shared component does not depend on any
  * other bounded context.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-layout',

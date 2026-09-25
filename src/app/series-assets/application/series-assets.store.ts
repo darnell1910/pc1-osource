@@ -12,8 +12,6 @@ import {LoadStatus} from './load-status';
  * search term, a cache of series per search term, a cache of series details per id and
  * the loading status of each request, and exposes read-only projections consumed by the
  * presentation layer. Every request is sent only once; a failed request can be retried.
- *
- * @author Darnell Apellido
  */
 @Service()
 export class SeriesAssetsStore {

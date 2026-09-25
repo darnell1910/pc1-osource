@@ -6,8 +6,6 @@ import {SeriesResource} from './series-resource';
  * @remarks
  * Each element of the search response contains the relevance score and the `show` object
  * with the series information.
- *
- * @author Darnell Apellido
  */
 export interface SeriesSearchResultResource {
   /** Relevance of the result for the query. */
@@ -21,7 +19,5 @@ export interface SeriesSearchResultResource {
  *
  * @remarks
  * The `/search/shows` endpoint returns a JSON array ordered by relevance.
- *
- * @author Darnell Apellido
  */
 export type SearchSeriesResponse = SeriesSearchResultResource[];

@@ -20,8 +20,6 @@ import {Series} from '../../../domain/model/series.entity';
  * @remarks
  * Only the identifier is required to request the details; the name is used as the dialog
  * title while the details are loading.
- *
- * @author Darnell Apellido
  */
 export interface SeriesDetailsDialogData {
   /** TVmaze show identifier. */
@@ -38,8 +36,6 @@ export interface SeriesDetailsDialogData {
  * provider show endpoint (`/shows/{id}`) through the `SeriesAssetsStore` and shows its
  * poster, summary, type, language, genres, status, premiere and end dates, runtime,
  * network, rating and links, together with loading and error states.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-series-details-dialog',

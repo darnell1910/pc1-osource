@@ -20,8 +20,6 @@ import {Series} from '../../../domain/model/series.entity';
  * genres, status and average rating with human-friendly labels, and a "Series Details"
  * action on the left side of the card footer that asks the parent view to show the
  * additional information of the series.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-series-card',

@@ -15,8 +15,6 @@ import {SeriesResource} from './series-resource';
  * responses into `Series` entities: it flattens nested objects (`image.medium`,
  * `rating.average`, `network.name`), converts the HTML summary into plain text, completes
  * missing values and keeps at most the number of results configured in the environment.
- *
- * @author Darnell Apellido
  */
 @Service()
 export class SeriesAssembler {

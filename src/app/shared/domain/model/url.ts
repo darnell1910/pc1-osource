@@ -5,8 +5,6 @@
  * Shared kernel value object used by entities of any bounded context to hold web links
  * (for example, series posters or official series websites). It validates the URL structure on
  * creation and supports an empty value to represent a missing link.
- *
- * @author Darnell Apellido
  */
 export class Url {
   /** Internal URL representation. */

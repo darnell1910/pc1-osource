@@ -5,8 +5,6 @@
  * Centralizes provider URLs, endpoint paths, keys and i18n settings so that no route
  * or key is hard-coded in the application source code. It replaces
  * `environment.ts` when the application is built or served with the `development` configuration.
- *
- * @author Darnell Apellido
  */
 export const environment = {
   production: false,

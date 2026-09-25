@@ -10,8 +10,6 @@ import {environment} from '../environments/environment';
  * @remarks
  * English is the default and fallback language. Translation files are loaded over HTTP
  * from the path configured in the environment.
- *
- * @author Darnell Apellido
  */
 export const appConfig: ApplicationConfig = {
   providers: [

@@ -15,8 +15,6 @@ import {SeriesResource} from './series-resource';
  * Sends requests with `HttpClient` to the search and show endpoints and returns domain
  * entities, delegating the request building and the response mapping to the
  * `SeriesAssembler`.
- *
- * @author Darnell Apellido
  */
 @Service()
 export class SeriesApi {

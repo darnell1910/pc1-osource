@@ -9,8 +9,6 @@ import {SeriesSearchTerm} from '../../../domain/model/series-search-term';
  * @remarks
  * Renders one toggle button per search term (Star and Love) and notifies the parent view
  * when the selection changes.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-series-search-term-selector',

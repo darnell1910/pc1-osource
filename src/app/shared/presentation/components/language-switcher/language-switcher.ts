@@ -10,8 +10,6 @@ import {environment} from '../../../../../environments/environment';
  * Renders the EN | ES toggle buttons shown on the right side of the toolbar. It delegates
  * the language change to ngx-translate and keeps the `lang` attribute of the document in
  * sync so that assistive technologies read the content with the right pronunciation.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-language-switcher',

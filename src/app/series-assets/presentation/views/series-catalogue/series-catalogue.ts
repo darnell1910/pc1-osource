@@ -23,8 +23,6 @@ import {
  * on the loading status of the selected search term, a progress indicator, an error
  * message with a retry action, an empty message or the list of series cards. It also
  * opens the series details dialog requested from a card.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-series-catalogue',

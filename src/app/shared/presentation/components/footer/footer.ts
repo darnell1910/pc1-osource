@@ -7,8 +7,6 @@ import {TranslatePipe} from '@ngx-translate/core';
  * @remarks
  * Shows the TV Series Explorer copyright notice on the first line and the developer
  * information (student code, first name and last name) on the second line.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-footer',

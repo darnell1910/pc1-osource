@@ -8,8 +8,6 @@ import {SeriesCatalogue} from './series-assets/presentation/views/series-catalog
  * @remarks
  * Composes the shared layout shell and projects the Series Catalogue view into it.
  * Routing is out of scope, so the catalogue is the only view of the application.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-root',

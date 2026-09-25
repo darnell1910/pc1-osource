@@ -1,7 +1,5 @@
 /**
  * Identifiers of the search terms supported by the catalogue.
- *
- * @author Darnell Apellido
  */
 export type SeriesSearchTermId = 'star' | 'love';
 
@@ -12,8 +10,6 @@ export type SeriesSearchTermId = 'star' | 'love';
  * The catalogue works with a closed set of search terms (Star and Love), so instances are
  * exposed as static constants and the constructor is private. Each term knows the query
  * value sent to the series provider.
- *
- * @author Darnell Apellido
  */
 export class SeriesSearchTerm {
   /** Series related to the term "star". */

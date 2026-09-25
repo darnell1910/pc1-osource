@@ -7,8 +7,6 @@ import {environment} from '../../../environments/environment';
  * @remarks
  * Keeps the Logo.dev base URL and publishable key out of the presentation layer. Both
  * values are read from the environment configuration.
- *
- * @author Darnell Apellido
  */
 @Service()
 export class LogoDevApi {

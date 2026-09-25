@@ -6,7 +6,5 @@
  * - `loading`: the request is in progress.
  * - `loaded`: the data was retrieved successfully.
  * - `failed`: the request failed and can be retried.
- *
- * @author Darnell Apellido
  */
 export type LoadStatus = 'idle' | 'loading' | 'loaded' | 'failed';

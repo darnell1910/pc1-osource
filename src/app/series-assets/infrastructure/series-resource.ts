@@ -6,8 +6,6 @@
  * `/shows/{id}` endpoint. Only the members used by the application are declared. The
  * `SeriesAssembler` flattens the nested objects (image, rating, network) and maps the
  * resource to the `Series` entity, so this structure does not leak into the domain model.
- *
- * @author Darnell Apellido
  */
 export interface SeriesResource {
   /** TVmaze show identifier. */
@@ -51,8 +49,6 @@ export interface SeriesResource {
  *
  * @remarks
  * The average is null when the show has not been rated.
- *
- * @author Darnell Apellido
  */
 export interface SeriesRatingResource {
   /** Average rating from 0 to 10. */
@@ -64,8 +60,6 @@ export interface SeriesRatingResource {
  *
  * @remarks
  * Only the name is used by the application.
- *
- * @author Darnell Apellido
  */
 export interface SeriesChannelResource {
   /** TVmaze channel identifier. */
@@ -79,8 +73,6 @@ export interface SeriesChannelResource {
  *
  * @remarks
  * Contains the absolute URLs of the medium-size and original poster images.
- *
- * @author Darnell Apellido
  */
 export interface SeriesImageResource {
   /** URL of the medium-size poster image. */

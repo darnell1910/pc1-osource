@@ -9,8 +9,6 @@ import {SeriesCard} from '../series-card/series-card';
  * Shows three cards per row on large screens, two on medium screens and one on small
  * screens. The list keeps its semantics for assistive technologies and forwards the
  * details requests of its cards to the parent view.
- *
- * @author Darnell Apellido
  */
 @Component({
   selector: 'app-series-list',

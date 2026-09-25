@@ -8,8 +8,6 @@ import {Url} from '../../../shared/domain/model/url';
  * Attribute names follow TypeScript conventions and do not depend on the naming or the
  * nesting used by the provider JSON objects (for example `image.medium` or
  * `rating.average`); the infrastructure assembler maps them.
- *
- * @author Darnell Apellido
  */
 export class Series {
   /** TVmaze show identifier. */
