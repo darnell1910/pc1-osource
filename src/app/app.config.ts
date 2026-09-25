@@ -4,13 +4,6 @@ import {provideTranslateService} from '@ngx-translate/core';
 import {provideTranslateHttpLoader} from '@ngx-translate/http-loader';
 import {environment} from '../environments/environment';
 
-/**
- * Root-level providers for change detection, HTTP communication and i18n.
- *
- * @remarks
- * English is the default and fallback language. Translation files are loaded over HTTP
- * from the path configured in the environment.
- */
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),

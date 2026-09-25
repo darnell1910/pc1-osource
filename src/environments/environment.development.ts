@@ -1,11 +1,3 @@
-/**
- * Development environment configuration.
- *
- * @remarks
- * Centralizes provider URLs, endpoint paths, keys and i18n settings so that no route
- * or key is hard-coded in the application source code. It replaces
- * `environment.ts` when the application is built or served with the `development` configuration.
- */
 export const environment = {
   production: false,
   seriesProviderApiBaseUrl: 'https://api.tvmaze.com',

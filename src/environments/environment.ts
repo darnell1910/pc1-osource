@@ -1,11 +1,3 @@
-/**
- * Production environment configuration.
- *
- * @remarks
- * Centralizes provider URLs, endpoint paths, keys and i18n settings so that no route
- * or key is hard-coded in the application source code. It is used by the default
- * `production` build configuration.
- */
 export const environment = {
   production: true,
   seriesProviderApiBaseUrl: 'https://api.tvmaze.com',
