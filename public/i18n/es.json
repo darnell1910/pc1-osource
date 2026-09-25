@@ -1,0 +1,65 @@
+{
+  "toolbar": {
+    "title": "Explorador de Series de TV",
+    "logo-alt": "Logo de TVmaze"
+  },
+  "language-switcher": {
+    "label": "Idioma de la interfaz",
+    "languages": {
+      "en": "EN, Inglés",
+      "es": "ES, Español"
+    }
+  },
+  "series-catalogue": {
+    "title": "Catálogo de Series",
+    "search-term-selector-label": "Término de búsqueda",
+    "series-list-label": "Series de {{searchTerm}}",
+    "loading": "Cargando series…",
+    "load-error": "No se pudieron cargar las series. Verifique su conexión e inténtelo de nuevo.",
+    "retry": "Reintentar",
+    "empty": "No se encontraron series para este término de búsqueda."
+  },
+  "search-terms": {
+    "star": "Estrella",
+    "love": "Amor"
+  },
+  "series-card": {
+    "image-alt": "Póster de la serie {{name}}",
+    "image-unavailable": "Póster no disponible para la serie {{name}}",
+    "untitled": "Serie sin título",
+    "language": "Idioma",
+    "genre": "Género",
+    "genres": "Géneros",
+    "status": "Estado",
+    "rating": "Calificación",
+    "rating-value": "{{rating}} / 10",
+    "not-rated": "Sin calificación",
+    "not-available": "No disponible",
+    "details": "Detalles de la serie",
+    "details-aria-label": "Detalles de la serie: {{name}}"
+  },
+  "series-details": {
+    "loading": "Cargando detalles de la serie…",
+    "load-error": "No se pudieron cargar los detalles de la serie. Verifique su conexión e inténtelo de nuevo.",
+    "retry": "Reintentar",
+    "summary": "Resumen",
+    "summary-unavailable": "Resumen no disponible.",
+    "information": "Información",
+    "type": "Tipo",
+    "premiered": "Estreno",
+    "ended": "Finalización",
+    "not-ended": "Aún en emisión",
+    "runtime": "Duración",
+    "runtime-value": "{{minutes}} min",
+    "network": "Cadena",
+    "official-site": "Sitio oficial",
+    "official-site-aria-label": "Sitio oficial de {{name}} (se abre en una nueva pestaña)",
+    "tvmaze-page": "Ver en TVmaze",
+    "tvmaze-page-aria-label": "Ver {{name}} en TVmaze (se abre en una nueva pestaña)",
+    "close": "Cerrar"
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 TV Series Explorer. Todos los derechos reservados.",
+    "developed-by": "Desarrollado por"
+  }
+}

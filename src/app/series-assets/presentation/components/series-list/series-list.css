@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.series-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.series-list-item {
+  display: flex;
+  min-width: 0;
+}
+
+@media (max-width: 959.98px) {
+  .series-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .series-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

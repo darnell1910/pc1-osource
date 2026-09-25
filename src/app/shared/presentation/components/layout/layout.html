@@ -1,0 +1,14 @@
+<header class="layout-header">
+  <mat-toolbar class="layout-toolbar">
+    <img class="toolbar-logo" [src]="logoUrl" [alt]="'toolbar.logo-alt' | translate" width="36" height="36"/>
+    <span class="toolbar-title">{{ 'toolbar.title' | translate }}</span>
+    <span class="toolbar-spacer" aria-hidden="true"></span>
+    <app-language-switcher/>
+  </mat-toolbar>
+</header>
+
+<main class="layout-content">
+  <ng-content/>
+</main>
+
+<app-footer/>

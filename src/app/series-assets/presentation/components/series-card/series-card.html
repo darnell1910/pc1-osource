@@ -1,0 +1,60 @@
+@let name = series().hasName ? series().name : ('series-card.untitled' | translate);
+
+<mat-card class="series-card" appearance="outlined">
+  @if (series().hasImage) {
+    <img mat-card-image
+         class="series-image"
+         [src]="series().imageUrlAsString"
+         [alt]="'series-card.image-alt' | translate: { name }"
+         [loading]="eagerImageLoading() ? 'eager' : 'lazy'"/>
+  } @else {
+    <div class="series-image series-image-placeholder"
+         role="img"
+         [attr.aria-label]="'series-card.image-unavailable' | translate: { name }">
+      <mat-icon aria-hidden="true">live_tv</mat-icon>
+    </div>
+  }
+
+  <mat-card-header>
+    <h2 mat-card-title class="series-name">{{ name }}</h2>
+  </mat-card-header>
+
+  <mat-card-content>
+    <dl class="series-attributes">
+      <div class="series-attribute">
+        <dt>{{ 'series-card.language' | translate }}</dt>
+        <dd>{{ series().language ?? ('series-card.not-available' | translate) }}</dd>
+      </div>
+      <div class="series-attribute">
+        <dt>{{ genresLabelKey() | translate }}</dt>
+        <dd>{{ series().hasGenres ? series().genresAsText : ('series-card.not-available' | translate) }}</dd>
+      </div>
+      <div class="series-attribute">
+        <dt>{{ 'series-card.status' | translate }}</dt>
+        <dd>{{ series().status ?? ('series-card.not-available' | translate) }}</dd>
+      </div>
+      <div class="series-attribute">
+        <dt>{{ 'series-card.rating' | translate }}</dt>
+        <dd>
+          @if (series().hasRating) {
+            <mat-icon class="rating-icon" aria-hidden="true">star</mat-icon>
+            {{ 'series-card.rating-value' | translate: { rating: series().averageRating } }}
+          } @else {
+            {{ 'series-card.not-rated' | translate }}
+          }
+        </dd>
+      </div>
+    </dl>
+  </mat-card-content>
+
+  <mat-card-actions class="series-card-actions" align="start">
+    <button matButton="filled"
+            type="button"
+            aria-haspopup="dialog"
+            [attr.aria-label]="'series-card.details-aria-label' | translate: { name }"
+            (click)="requestDetails()">
+      <mat-icon aria-hidden="true">info</mat-icon>
+      {{ 'series-card.details' | translate }}
+    </button>
+  </mat-card-actions>
+</mat-card>

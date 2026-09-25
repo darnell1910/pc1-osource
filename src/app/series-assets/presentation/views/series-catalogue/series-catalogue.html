@@ -1,0 +1,39 @@
+@let searchTermLabel = ('search-terms.' + selectedSearchTerm().id) | translate;
+
+<section class="series-catalogue" aria-labelledby="series-catalogue-title">
+  <header class="series-catalogue-header">
+    <h1 id="series-catalogue-title" class="series-catalogue-title">{{ 'series-catalogue.title' | translate }}</h1>
+    <app-series-search-term-selector
+      [searchTerms]="searchTerms"
+      [selectedSearchTerm]="selectedSearchTerm()"
+      (searchTermSelected)="onSearchTermSelected($event)"/>
+  </header>
+
+  <div class="series-catalogue-content" [attr.aria-busy]="loadStatus() === 'loading'">
+    @switch (loadStatus()) {
+      @case ('loading') {
+        <mat-progress-bar mode="indeterminate" [attr.aria-label]="'series-catalogue.loading' | translate"/>
+        <p class="status-message" role="status">{{ 'series-catalogue.loading' | translate }}</p>
+      }
+      @case ('failed') {
+        <div class="status-message" role="alert">
+          <p>{{ 'series-catalogue.load-error' | translate }}</p>
+          <button matButton="outlined" type="button" (click)="retryLoading()">
+            <mat-icon aria-hidden="true">refresh</mat-icon>
+            {{ 'series-catalogue.retry' | translate }}
+          </button>
+        </div>
+      }
+      @case ('loaded') {
+        @if (series().length > 0) {
+          <app-series-list
+            [series]="series()"
+            [listLabel]="'series-catalogue.series-list-label' | translate: { searchTerm: searchTermLabel }"
+            (seriesDetailsRequested)="openSeriesDetails($event)"/>
+        } @else {
+          <p class="status-message" role="status">{{ 'series-catalogue.empty' | translate }}</p>
+        }
+      }
+    }
+  </div>
+</section>

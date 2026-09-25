@@ -1,0 +1,124 @@
+@let name = series()?.name || data.seriesName || ('series-card.untitled' | translate);
+
+<h2 mat-dialog-title>{{ name }}</h2>
+
+<mat-dialog-content class="series-details-content" [attr.aria-busy]="loadStatus() === 'loading'">
+  @switch (loadStatus()) {
+    @case ('failed') {
+      <div class="status-message" role="alert">
+        <p>{{ 'series-details.load-error' | translate }}</p>
+        <button matButton="outlined" type="button" (click)="retryLoading()">
+          <mat-icon aria-hidden="true">refresh</mat-icon>
+          {{ 'series-details.retry' | translate }}
+        </button>
+      </div>
+    }
+    @case ('loaded') {
+      @if (series(); as details) {
+        <div class="series-details">
+          @if (details.hasImage) {
+            <img class="series-details-image"
+                 [src]="details.imageUrlAsString"
+                 [alt]="'series-card.image-alt' | translate: { name }"/>
+          } @else {
+            <div class="series-details-image series-details-image-placeholder"
+                 role="img"
+                 [attr.aria-label]="'series-card.image-unavailable' | translate: { name }">
+              <mat-icon aria-hidden="true">live_tv</mat-icon>
+            </div>
+          }
+
+          <div class="series-details-information">
+            <h3 class="section-title">{{ 'series-details.summary' | translate }}</h3>
+            <p class="series-summary">
+              {{ details.hasSummary ? details.summary : ('series-details.summary-unavailable' | translate) }}
+            </p>
+
+            <h3 class="section-title">{{ 'series-details.information' | translate }}</h3>
+            <dl class="series-attributes">
+              <div class="series-attribute">
+                <dt>{{ 'series-details.type' | translate }}</dt>
+                <dd>{{ details.type ?? ('series-card.not-available' | translate) }}</dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-card.language' | translate }}</dt>
+                <dd>{{ details.language ?? ('series-card.not-available' | translate) }}</dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ (details.hasMultipleGenres ? 'series-card.genres' : 'series-card.genre') | translate }}</dt>
+                <dd>{{ details.hasGenres ? details.genresAsText : ('series-card.not-available' | translate) }}</dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-card.status' | translate }}</dt>
+                <dd>{{ details.status ?? ('series-card.not-available' | translate) }}</dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-details.premiered' | translate }}</dt>
+                <dd>{{ details.premieredOn ?? ('series-card.not-available' | translate) }}</dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-details.ended' | translate }}</dt>
+                <dd>{{ details.endedOn ?? ('series-details.not-ended' | translate) }}</dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-details.runtime' | translate }}</dt>
+                <dd>
+                  {{ details.runtime !== null
+                    ? ('series-details.runtime-value' | translate: { minutes: details.runtime })
+                    : ('series-card.not-available' | translate) }}
+                </dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-details.network' | translate }}</dt>
+                <dd>{{ details.networkName ?? ('series-card.not-available' | translate) }}</dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-card.rating' | translate }}</dt>
+                <dd>
+                  {{ details.hasRating
+                    ? ('series-card.rating-value' | translate: { rating: details.averageRating })
+                    : ('series-card.not-rated' | translate) }}
+                </dd>
+              </div>
+              <div class="series-attribute">
+                <dt>{{ 'series-details.official-site' | translate }}</dt>
+                <dd>
+                  @if (details.hasOfficialSite) {
+                    <a [href]="details.officialSiteUrlAsString"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       [attr.aria-label]="'series-details.official-site-aria-label' | translate: { name }">
+                      {{ details.officialSiteUrlAsString }}
+                    </a>
+                  } @else {
+                    {{ 'series-card.not-available' | translate }}
+                  }
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      }
+    }
+    @default {
+      <mat-progress-bar mode="indeterminate" [attr.aria-label]="'series-details.loading' | translate"/>
+      <p class="status-message" role="status">{{ 'series-details.loading' | translate }}</p>
+    }
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  @if (series()?.hasTvmazePage) {
+    <a matButton="outlined"
+       [href]="series()?.tvmazePageUrlAsString"
+       target="_blank"
+       rel="noopener noreferrer"
+       [attr.aria-label]="'series-details.tvmaze-page-aria-label' | translate: { name }">
+      <mat-icon aria-hidden="true">open_in_new</mat-icon>
+      {{ 'series-details.tvmaze-page' | translate }}
+    </a>
+  }
+  <button matButton="filled" type="button" mat-dialog-close>
+    {{ 'series-details.close' | translate }}
+  </button>
+</mat-dialog-actions>

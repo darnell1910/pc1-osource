@@ -1,0 +1,75 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.series-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.series-image {
+  width: 100%;
+  height: 320px;
+  margin: 0;
+  object-fit: contain;
+  background-color: var(--mat-sys-surface-container);
+}
+
+.series-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.series-image-placeholder mat-icon {
+  width: 72px;
+  height: 72px;
+  font-size: 72px;
+}
+
+.series-name {
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.series-attributes {
+  margin: 12px 0 0;
+}
+
+.series-attribute {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.series-attribute dt {
+  font: var(--mat-sys-label-large);
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.series-attribute dd {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.rating-icon {
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  color: var(--mat-sys-tertiary);
+}
+
+.series-card-actions {
+  margin-top: auto;
+  padding: 16px;
+}

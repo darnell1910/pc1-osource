@@ -1,0 +1,10 @@
+<ul class="series-list" role="list" [attr.aria-label]="listLabel() || null">
+  @for (item of series(); track item.id) {
+    <li class="series-list-item">
+      <app-series-card
+        [series]="item"
+        [eagerImageLoading]="$index < eagerImageCount"
+        (detailsRequested)="seriesDetailsRequested.emit($event)"/>
+    </li>
+  }
+</ul>

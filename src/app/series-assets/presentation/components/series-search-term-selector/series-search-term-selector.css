@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  max-width: 100%;
+}
+
+.search-term-selector {
+  max-width: 100%;
+}
+
+.search-term-selector mat-button-toggle {
+  min-width: 120px;
+}
+
+@media (max-width: 599.98px) {
+  .search-term-selector {
+    display: flex;
+    width: 100%;
+  }
+
+  .search-term-selector mat-button-toggle {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}

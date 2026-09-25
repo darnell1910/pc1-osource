@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.footer {
+  padding: 20px 16px;
+  text-align: center;
+  background-color: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface-variant);
+  font: var(--mat-sys-body-medium);
+  border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+.footer-line {
+  margin: 4px 0;
+}

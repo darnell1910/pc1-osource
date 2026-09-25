@@ -1,0 +1,65 @@
+{
+  "toolbar": {
+    "title": "TV Series Explorer",
+    "logo-alt": "TVmaze logo"
+  },
+  "language-switcher": {
+    "label": "Interface language",
+    "languages": {
+      "en": "EN, English",
+      "es": "ES, Spanish"
+    }
+  },
+  "series-catalogue": {
+    "title": "Series Catalogue",
+    "search-term-selector-label": "Search term",
+    "series-list-label": "{{searchTerm}} series",
+    "loading": "Loading series…",
+    "load-error": "The series could not be loaded. Please check your connection and try again.",
+    "retry": "Try again",
+    "empty": "No series were found for this search term."
+  },
+  "search-terms": {
+    "star": "Star",
+    "love": "Love"
+  },
+  "series-card": {
+    "image-alt": "Poster of the series {{name}}",
+    "image-unavailable": "Poster not available for the series {{name}}",
+    "untitled": "Untitled series",
+    "language": "Language",
+    "genre": "Genre",
+    "genres": "Genres",
+    "status": "Status",
+    "rating": "Rating",
+    "rating-value": "{{rating}} / 10",
+    "not-rated": "Not rated yet",
+    "not-available": "Not available",
+    "details": "Series Details",
+    "details-aria-label": "Series Details: {{name}}"
+  },
+  "series-details": {
+    "loading": "Loading series details…",
+    "load-error": "The series details could not be loaded. Please check your connection and try again.",
+    "retry": "Try again",
+    "summary": "Summary",
+    "summary-unavailable": "Summary not available.",
+    "information": "Information",
+    "type": "Type",
+    "premiered": "Premiered",
+    "ended": "Ended",
+    "not-ended": "Still on air",
+    "runtime": "Runtime",
+    "runtime-value": "{{minutes}} min",
+    "network": "Network",
+    "official-site": "Official site",
+    "official-site-aria-label": "Official site of {{name}} (opens in a new tab)",
+    "tvmaze-page": "View on TVmaze",
+    "tvmaze-page-aria-label": "View {{name}} on TVmaze (opens in a new tab)",
+    "close": "Close"
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 TV Series Explorer. All rights reserved.",
+    "developed-by": "Developed by"
+  }
+}

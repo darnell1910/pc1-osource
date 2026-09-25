@@ -1,0 +1,9 @@
+:host {
+  display: inline-flex;
+}
+
+.language-switcher {
+  --mat-button-toggle-height: 36px;
+  --mat-button-toggle-shape: 18px;
+  background-color: var(--mat-sys-surface);
+}

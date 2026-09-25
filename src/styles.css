@@ -1,0 +1,10 @@
+/* Global styles of TV Series Explorer. */
+html,
+body {
+  min-height: 100%;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--mat-sys-primary);
+  outline-offset: 2px;
+}
