@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pc17737uxxxxxxxxx": {
+    "pc17737u202410105": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -63,10 +63,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pc17737uxxxxxxxxx:build:production"
+              "buildTarget": "pc17737u202410105:build:production"
             },
             "development": {
-              "buildTarget": "pc17737uxxxxxxxxx:build:development"
+              "buildTarget": "pc17737u202410105:build:development"
             }
           },
           "defaultConfiguration": "development"

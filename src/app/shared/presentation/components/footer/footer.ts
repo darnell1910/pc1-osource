@@ -19,7 +19,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 })
 export class Footer {
   /** Student code of the developer. */
-  protected readonly developerCode = 'uxxxxxxxxx';
+  protected readonly developerCode = 'u202410105';
   /** First name and last name of the developer. */
   protected readonly developerFullName = 'Darnell Apellido';
 }

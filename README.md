@@ -1,4 +1,4 @@
-# TV Series Explorer (pc17737uxxxxxxxxx)
+# TV Series Explorer (pc17737u202410105)
 
 ## Overview
 TV Series Explorer is an interactive web application for [TVmaze](https://www.tvmaze.com/) that lets
@@ -100,5 +100,5 @@ The build artifacts are stored in the `dist/` directory.
 
 ## Author
 - **Name**: Darnell Apellido
-- **Student code**: uxxxxxxxxx
+- **Student code**: u202410105
 - **Course**: Open-Source Applications Development (1ASI0729), NRC 7737, Universidad Peruana de Ciencias Aplicadas (UPC)
