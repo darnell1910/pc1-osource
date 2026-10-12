@@ -5,17 +5,11 @@
 }
 
 .layout-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
   gap: var(--app-spacing-md);
-  padding: 0 var(--app-spacing-lg);
-  box-shadow: var(--mat-sys-level2);
 }
 
 .toolbar-logo {
   flex-shrink: 0;
-  border-radius: 10px;
 }
 
 .toolbar-title {
@@ -23,10 +17,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-family: Montserrat, Inter, sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
 }
 
 .toolbar-spacer {
@@ -38,9 +28,7 @@
 }
 
 .layout-sidenav {
-  width: 240px;
-  padding-top: var(--app-spacing-sm);
-  border-right: 1px solid var(--mat-sys-outline-variant);
+  width: 220px;
 }
 
 .active-link {
@@ -54,20 +42,12 @@
 
 .layout-content {
   flex: 1 0 auto;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--app-spacing-xl) var(--app-spacing-lg);
-  box-sizing: border-box;
+  padding: var(--app-spacing-lg);
 }
 
 @media (max-width: 599.98px) {
   .layout-toolbar {
     gap: var(--app-spacing-sm);
-    padding: 0 var(--app-spacing-sm);
-  }
-
-  .toolbar-title {
     font-size: 0.95rem;
   }
 

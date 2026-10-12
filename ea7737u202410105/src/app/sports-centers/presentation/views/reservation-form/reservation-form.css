@@ -11,13 +11,10 @@
 
 .form-message {
   margin: 0;
-  padding: var(--app-spacing-sm) var(--app-spacing-md);
-  border-radius: 8px;
 }
 
 .form-message-error {
-  background-color: var(--mat-sys-error-container);
-  color: var(--mat-sys-on-error-container);
+  color: var(--mat-sys-error);
 }
 
 .form-actions {

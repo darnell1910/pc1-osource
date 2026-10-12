@@ -4,11 +4,5 @@
 
 .language-switcher {
   --mat-button-toggle-height: 36px;
-  --mat-button-toggle-shape: 18px;
-  --mat-button-toggle-text-color: #ffffff;
-  --mat-button-toggle-selected-state-background-color: var(--mat-sys-primary);
-  --mat-button-toggle-selected-state-text-color: var(--mat-sys-on-primary);
-  --mat-button-toggle-divider-color: rgba(255, 255, 255, 0.4);
-  border-color: rgba(255, 255, 255, 0.4);
-  font-weight: 600;
+  background-color: var(--mat-sys-surface);
 }

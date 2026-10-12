@@ -1,21 +1,15 @@
 .home-hero {
-  margin-bottom: var(--app-spacing-xl);
-  padding: var(--app-spacing-lg);
-  border-radius: 16px;
-  background: linear-gradient(135deg, var(--mat-sys-primary-container), var(--mat-sys-tertiary-container));
-  color: var(--mat-sys-on-primary-container);
+  margin-bottom: var(--app-spacing-lg);
 }
 
 .home-content {
   margin: 0;
-  font: var(--mat-sys-title-large);
+  font: var(--mat-sys-body-large);
 }
 
 .section-title {
   margin: 0 0 var(--app-spacing-md);
-  font: var(--mat-sys-headline-small);
-  font-family: Montserrat, Inter, sans-serif;
-  font-weight: 700;
+  font: var(--mat-sys-title-large);
 }
 
 .home-message {
@@ -24,12 +18,8 @@
   align-items: center;
   gap: var(--app-spacing-md);
   margin: 0;
-  padding: var(--app-spacing-md);
-  border-radius: 8px;
-  background-color: var(--mat-sys-surface-container);
 }
 
 .home-message-error {
-  background-color: var(--mat-sys-error-container);
-  color: var(--mat-sys-on-error-container);
+  color: var(--mat-sys-error);
 }

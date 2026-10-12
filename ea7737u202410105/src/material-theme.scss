@@ -5,32 +5,23 @@ html {
   @include mat.theme((
     color: (
       primary: mat.$orange-palette,
-      tertiary: mat.$azure-palette,
+      tertiary: mat.$orange-palette,
     ),
-    typography: (
-      brand-family: 'Montserrat',
-      plain-family: 'Inter',
-      bold-weight: 700,
-      medium-weight: 600,
-      regular-weight: 400,
-    ),
+    typography: Roboto,
     density: 0,
   ));
 }
 
 :root {
   @include mat.toolbar-overrides((
-    container-background-color: #14213d,
-    container-text-color: #ffffff,
-  ));
-  @include mat.card-overrides((
-    elevated-container-shape: 16px,
+    container-background-color: var(--mat-sys-primary),
+    container-text-color: var(--mat-sys-on-primary),
   ));
 }
 
 body {
   color-scheme: light;
-  background-color: var(--mat-sys-surface-container-low);
+  background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
   margin: 0;
