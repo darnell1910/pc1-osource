@@ -6,4 +6,4 @@ export type ActivityType = 'fitness' | 'yoga' | 'swimming' | 'cycling';
 /**
  * Supported activity types in display order.
  */
-export const ACTIVITY_TYPES: ReadonlyArray<ActivityType> = ['fitness', 'yoga', 'swimming', 'cycling'];
+export const ACTIVITY_TYPES: readonly ActivityType[] = ['fitness', 'yoga', 'swimming', 'cycling'];

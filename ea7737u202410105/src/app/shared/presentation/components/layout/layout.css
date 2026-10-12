@@ -47,7 +47,13 @@
   background-color: var(--mat-sys-secondary-container);
 }
 
+.layout-content-shell {
+  display: flex;
+  flex-direction: column;
+}
+
 .layout-content {
+  flex: 1 0 auto;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

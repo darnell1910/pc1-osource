@@ -3,7 +3,7 @@
  */
 export interface BaseEntity {
   /**
-   * Unique identifier of the entity.
+   * Unique identifier for the entity.
    */
   id: number;
 }

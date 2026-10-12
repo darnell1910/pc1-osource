@@ -9,7 +9,7 @@ export interface BaseResponse {}
  */
 export interface BaseResource {
   /**
-   * Unique identifier of the resource.
+   * The unique identifier for the resource.
    */
   id: number;
 }

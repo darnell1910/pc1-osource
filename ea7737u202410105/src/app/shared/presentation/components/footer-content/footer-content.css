@@ -1,0 +1,11 @@
+.footer-content {
+  padding: var(--app-spacing-md) var(--app-spacing-lg);
+  background-color: #14213d;
+  color: #ffffff;
+  text-align: center;
+  font: var(--mat-sys-body-small);
+}
+
+.footer-content p {
+  margin: var(--app-spacing-xs) 0;
+}

@@ -20,7 +20,7 @@ export class LanguageSwitcher {
   /**
    * Languages supported by the user interface.
    */
-  protected readonly languages: ReadonlyArray<string> = environment.supportedLanguages;
+  protected readonly languages: readonly string[] = environment.supportedLanguages;
 
   /**
    * Language currently used by the user interface.

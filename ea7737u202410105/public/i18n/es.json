@@ -72,5 +72,9 @@
     "title": "Página no encontrada",
     "message": "La ruta \"{{path}}\" no fue encontrada.",
     "go-home": "Volver al Inicio"
+  },
+  "footer": {
+    "copyright": "© {{year}} UrbanFit Sports Centers. Todos los derechos reservados.",
+    "powered-by": "Desarrollado con Angular 22 y Angular Material."
   }
 }

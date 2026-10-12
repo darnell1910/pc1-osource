@@ -10,6 +10,7 @@ import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {TranslatePipe} from '@ngx-translate/core';
 import {LanguageSwitcher} from '../language-switcher/language-switcher';
+import {FooterContent} from '../footer-content/footer-content';
 import {environment} from '../../../../../environments/environment';
 
 /**
@@ -27,7 +28,8 @@ import {environment} from '../../../../../environments/environment';
     MatIcon,
     MatIconButton,
     TranslatePipe,
-    LanguageSwitcher
+    LanguageSwitcher,
+    FooterContent
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.css',

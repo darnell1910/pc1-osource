@@ -15,7 +15,7 @@ export class SportsCenterOccupancy {
    */
   constructor(
     readonly sportsCenter: SportsCenter,
-    readonly reservations: ReadonlyArray<Reservation>
+    readonly reservations: readonly Reservation[]
   ) {
   }
 

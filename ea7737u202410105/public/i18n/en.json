@@ -72,5 +72,9 @@
     "title": "Page not found",
     "message": "The path \"{{path}}\" was not found.",
     "go-home": "Back to Home"
+  },
+  "footer": {
+    "copyright": "© {{year}} UrbanFit Sports Centers. All rights reserved.",
+    "powered-by": "Powered by Angular 22 and Angular Material."
   }
 }

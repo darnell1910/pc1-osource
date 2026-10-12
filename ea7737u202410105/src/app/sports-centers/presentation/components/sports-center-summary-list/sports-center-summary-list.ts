@@ -26,7 +26,7 @@ export class SportsCenterSummaryList {
   /**
    * Occupancies of the sports centers to display.
    */
-  readonly occupancies = input.required<ReadonlyArray<SportsCenterOccupancy>>();
+  readonly occupancies = input.required<readonly SportsCenterOccupancy[]>();
 
   /**
    * Number of grid columns according to the screen size.

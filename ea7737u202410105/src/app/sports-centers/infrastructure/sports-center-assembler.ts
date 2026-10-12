@@ -8,21 +8,20 @@ import {SportsCenterResource, SportsCentersResponse} from './sports-centers-resp
  */
 export class SportsCenterAssembler implements BaseAssembler<SportsCenter, SportsCenterResource, SportsCentersResponse> {
   /**
-   * Converts a sports centers response into sports center entities.
-   * @param response - API response containing sports centers.
-   * @returns Array of sports center entities.
+   * Converts a SportsCentersResponse to an array of SportsCenter entities.
+   * @param response - The API response containing sports centers.
+   * @returns An array of SportsCenter entities.
    */
-  toEntitiesFromResponse(response: SportsCentersResponse): SportsCenter[] {
-    return response.sportsCenters.map(resource => this.toEntityFromResource(resource));
-  }
+  toEntitiesFromResponse = (response: SportsCentersResponse): SportsCenter[] =>
+    response.sportsCenters.map(resource => this.toEntityFromResource(resource));
 
   /**
-   * Converts a sports center resource into a sports center entity.
-   * @param resource - Resource to convert.
-   * @returns The mapped sports center entity.
+   * Converts a SportsCenterResource to a SportsCenter entity.
+   * @param resource - The resource to convert.
+   * @returns The converted SportsCenter entity.
    */
-  toEntityFromResource(resource: SportsCenterResource): SportsCenter {
-    return new SportsCenter({
+  toEntityFromResource = (resource: SportsCenterResource): SportsCenter =>
+    new SportsCenter({
       id: resource.id,
       name: resource.name,
       activityType: resource.activityType as ActivityType,
@@ -30,21 +29,19 @@ export class SportsCenterAssembler implements BaseAssembler<SportsCenter, Sports
       latitude: resource.latitude,
       longitude: resource.longitude
     });
-  }
 
   /**
-   * Converts a sports center entity into a sports center resource.
-   * @param entity - Entity to convert.
-   * @returns The mapped sports center resource.
+   * Converts a SportsCenter entity to a SportsCenterResource.
+   * @param entity - The entity to convert.
+   * @returns The converted SportsCenterResource.
    */
-  toResourceFromEntity(entity: SportsCenter): SportsCenterResource {
-    return {
+  toResourceFromEntity = (entity: SportsCenter): SportsCenterResource =>
+    ({
       id: entity.id,
       name: entity.name,
       activityType: entity.activityType,
       capacity: entity.capacity,
       latitude: entity.latitude,
       longitude: entity.longitude
-    };
-  }
+    } as SportsCenterResource);
 }

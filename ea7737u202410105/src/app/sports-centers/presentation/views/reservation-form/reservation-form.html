@@ -27,7 +27,7 @@
               {{ 'reservation-form.available-capacity' | translate: {capacity: occupancy.availableCapacity} }}
             </mat-hint>
           }
-          @if (form.controls.activityType.hasError('required')) {
+          @if (hasControlError(form, 'activityType', 'required')) {
             <mat-error>{{ 'reservation-form.errors.activity-type-required' | translate }}</mat-error>
           }
         </mat-form-field>
@@ -45,7 +45,7 @@
         <mat-form-field appearance="outline">
           <mat-label>{{ 'reservation-form.participant-name' | translate }}</mat-label>
           <input matInput formControlName="participantName" autocomplete="name" required>
-          @if (form.controls.participantName.invalid) {
+          @if (isInvalidControl(form, 'participantName')) {
             <mat-error>{{ 'reservation-form.errors.participant-name-required' | translate }}</mat-error>
           }
         </mat-form-field>
@@ -54,11 +54,11 @@
           <mat-label>{{ 'reservation-form.participants' | translate }}</mat-label>
           <input matInput type="number" formControlName="participants" min="1" inputmode="numeric" required
                  [attr.max]="selectedOccupancy()?.availableCapacity">
-          @if (form.controls.participants.hasError('required')) {
+          @if (hasControlError(form, 'participants', 'required')) {
             <mat-error>{{ 'reservation-form.errors.participants-required' | translate }}</mat-error>
-          } @else if (form.controls.participants.hasError('min')) {
+          } @else if (hasControlError(form, 'participants', 'min')) {
             <mat-error>{{ 'reservation-form.errors.participants-min' | translate }}</mat-error>
-          } @else if (form.controls.participants.hasError('max')) {
+          } @else if (hasControlError(form, 'participants', 'max')) {
             <mat-error>{{ 'reservation-form.errors.participants-max' | translate: {capacity: selectedOccupancy()?.availableCapacity} }}</mat-error>
           }
         </mat-form-field>

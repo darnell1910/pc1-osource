@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router';
 
-const reservationForm = () => import('./views/reservation-form/reservation-form').then(m => m.ReservationForm);
+const reservationForm = () => import('./presentation/views/reservation-form/reservation-form').then(m => m.ReservationForm);
 
 /**
  * Route tree for the sports centers presentation views.

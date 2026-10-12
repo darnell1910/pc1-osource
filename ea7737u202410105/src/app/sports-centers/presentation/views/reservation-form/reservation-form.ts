@@ -15,6 +15,7 @@ import {WeatherStore} from '../../../../weather/application/weather.store';
 import {CurrentTemperature} from '../../../../weather/presentation/components/current-temperature/current-temperature';
 import {ACTIVITY_TYPES, ActivityType} from '../../../domain/model/activity-type';
 import {Reservation} from '../../../domain/model/reservation.entity';
+import {BaseForm} from '../../../../shared/presentation/components/base-form/base-form';
 
 /**
  * View with the reactive form used to register a new reservation in the sports center of the selected activity type.
@@ -37,7 +38,7 @@ import {Reservation} from '../../../domain/model/reservation.entity';
   styleUrl: './reservation-form.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReservationForm {
+export class ReservationForm extends BaseForm {
   private readonly formBuilder = inject(NonNullableFormBuilder);
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
@@ -92,6 +93,7 @@ export class ReservationForm {
    * Creates an instance of ReservationForm and keeps the weather and capacity validation in sync with the selected activity type.
    */
   constructor() {
+    super();
     this.weatherStore.clear();
     this.destroyRef.onDestroy(() => this.weatherStore.clear());
 
