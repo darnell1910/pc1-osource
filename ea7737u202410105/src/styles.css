@@ -1,0 +1,26 @@
+:root {
+  --app-spacing-xs: 4px;
+  --app-spacing-sm: 8px;
+  --app-spacing-md: 16px;
+  --app-spacing-lg: 24px;
+  --app-spacing-xl: 32px;
+}
+
+*:focus-visible {
+  outline: 3px solid var(--mat-sys-primary);
+  outline-offset: 2px;
+}
+
+.page-title {
+  margin: 0 0 var(--app-spacing-sm);
+  font: var(--mat-sys-headline-medium);
+  font-family: Montserrat, Inter, sans-serif;
+  font-weight: 800;
+  color: var(--mat-sys-on-surface);
+}
+
+.page-subtitle {
+  margin: 0 0 var(--app-spacing-lg);
+  font: var(--mat-sys-title-medium);
+  color: var(--mat-sys-on-surface-variant);
+}

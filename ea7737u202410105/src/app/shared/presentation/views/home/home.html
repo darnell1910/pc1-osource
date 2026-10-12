@@ -1,0 +1,24 @@
+<section class="home-hero" aria-labelledby="home-title">
+  <h1 id="home-title" class="page-title">{{ 'home.title' | translate }}</h1>
+  <p class="home-content">{{ 'home.content' | translate }}</p>
+</section>
+
+<section class="home-sports-centers" aria-labelledby="my-sports-centers-title"
+         [attr.aria-busy]="sportsCentersStore.loading()">
+  <h2 id="my-sports-centers-title" class="section-title">{{ 'sports-centers.title' | translate }}</h2>
+
+  @if (sportsCentersStore.loading()) {
+    <mat-progress-bar mode="indeterminate" [attr.aria-label]="'sports-centers.loading' | translate"/>
+  } @else if (sportsCentersStore.error()) {
+    <div class="home-message home-message-error" role="alert">
+      <span>{{ 'sports-centers.load-error' | translate }}</span>
+      <button mat-stroked-button type="button" (click)="sportsCentersStore.loadSportsCentersWithReservations()">
+        {{ 'current-temperature.retry' | translate }}
+      </button>
+    </div>
+  } @else if (sportsCentersStore.sportsCenterOccupancies().length === 0) {
+    <p class="home-message" role="status">{{ 'sports-centers.empty-list' | translate }}</p>
+  } @else {
+    <app-sports-center-summary-list [occupancies]="sportsCentersStore.sportsCenterOccupancies()"/>
+  }
+</section>

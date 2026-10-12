@@ -1,0 +1,7 @@
+<mat-grid-list role="list" [cols]="columns()" rowHeight="340px" gutterSize="16px">
+  @for (occupancy of occupancies(); track occupancy.sportsCenter.id) {
+    <mat-grid-tile role="listitem">
+      <app-sports-center-summary class="summary-tile" [occupancy]="occupancy"/>
+    </mat-grid-tile>
+  }
+</mat-grid-list>

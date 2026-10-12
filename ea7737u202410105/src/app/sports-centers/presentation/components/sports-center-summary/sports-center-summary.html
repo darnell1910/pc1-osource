@@ -1,0 +1,41 @@
+@let sportsCenter = occupancy().sportsCenter;
+<mat-card class="summary-card" appearance="raised" role="article" [attr.aria-labelledby]="'sports-center-' + sportsCenter.id">
+  <mat-card-header class="summary-header">
+    <mat-icon matCardAvatar class="summary-avatar" aria-hidden="true">fitness_center</mat-icon>
+    <mat-card-title [id]="'sports-center-' + sportsCenter.id">{{ sportsCenter.name }}</mat-card-title>
+    <mat-card-subtitle>{{ 'activity-types.' + sportsCenter.activityType | translate }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="summary-content">
+    @if (occupancy().isEmpty) {
+      <p class="summary-empty">{{ 'sports-center-summary.empty' | translate }}</p>
+    } @else {
+      <mat-list [attr.aria-label]="'sports-center-summary.reservations-label' | translate: {name: sportsCenter.name}">
+        @for (reservation of occupancy().reservations; track reservation.id) {
+          <mat-list-item>
+            <mat-icon matListItemIcon aria-hidden="true">person</mat-icon>
+            <span matListItemTitle>{{ reservation.participantName }}</span>
+            <span matListItemMeta class="summary-participants">
+              {{ 'sports-center-summary.participants' | translate: {count: reservation.participants} }}
+            </span>
+          </mat-list-item>
+        }
+      </mat-list>
+    }
+  </mat-card-content>
+
+  <mat-divider/>
+
+  <mat-card-footer class="summary-footer">
+    <dl class="summary-indicators">
+      <div class="summary-indicator">
+        <dt>{{ 'sports-center-summary.total-participants' | translate }}</dt>
+        <dd>{{ occupancy().totalParticipants }}</dd>
+      </div>
+      <div class="summary-indicator">
+        <dt>{{ 'sports-center-summary.available-capacity' | translate }}</dt>
+        <dd [class.summary-indicator-full]="occupancy().availableCapacity <= 0">{{ occupancy().availableCapacity }}</dd>
+      </div>
+    </dl>
+  </mat-card-footer>
+</mat-card>

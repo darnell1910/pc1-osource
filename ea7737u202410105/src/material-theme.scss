@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme((
+    color: (
+      primary: mat.$orange-palette,
+      tertiary: mat.$azure-palette,
+    ),
+    typography: (
+      brand-family: 'Montserrat',
+      plain-family: 'Inter',
+      bold-weight: 700,
+      medium-weight: 600,
+      regular-weight: 400,
+    ),
+    density: 0,
+  ));
+}
+
+:root {
+  @include mat.toolbar-overrides((
+    container-background-color: #14213d,
+    container-text-color: #ffffff,
+  ));
+  @include mat.card-overrides((
+    elevated-container-shape: 16px,
+  ));
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--mat-sys-surface-container-low);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+  margin: 0;
+  height: 100%;
+}

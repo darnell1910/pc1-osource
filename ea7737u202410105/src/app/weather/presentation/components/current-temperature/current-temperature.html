@@ -1,0 +1,19 @@
+<section class="current-temperature" role="status" aria-live="polite"
+         [attr.aria-busy]="loading()" [attr.aria-label]="'current-temperature.label' | translate">
+  <mat-icon class="current-temperature-icon" aria-hidden="true">thermostat</mat-icon>
+  @if (loading()) {
+    <mat-progress-spinner mode="indeterminate" diameter="24" aria-hidden="true"/>
+    <span>{{ 'current-temperature.loading' | translate }}</span>
+  } @else if (hasError()) {
+    <span class="current-temperature-error" role="alert">{{ 'current-temperature.error' | translate }}</span>
+    <button mat-stroked-button type="button" (click)="retry.emit()">
+      <mat-icon aria-hidden="true">refresh</mat-icon>
+      {{ 'current-temperature.retry' | translate }}
+    </button>
+  } @else if (currentWeather(); as weather) {
+    <span class="current-temperature-label">{{ 'current-temperature.label' | translate }}</span>
+    <strong class="current-temperature-value">{{ weather.temperature | number: '1.0-1' }} {{ weather.temperatureUnit }}</strong>
+  } @else {
+    <span class="current-temperature-placeholder">{{ 'current-temperature.placeholder' | translate }}</span>
+  }
+</section>

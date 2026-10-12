@@ -1,0 +1,85 @@
+<section class="reservation-form-page" aria-labelledby="reservation-form-title">
+  <h1 id="reservation-form-title" class="page-title">{{ 'reservation-form.title' | translate }}</h1>
+  <p class="page-subtitle">{{ 'reservation-form.subtitle' | translate }}</p>
+
+  <mat-card class="reservation-form-card" appearance="outlined">
+    @if (saving() || sportsCentersStore.loading()) {
+      <mat-progress-bar mode="indeterminate" aria-hidden="true"/>
+    }
+    <mat-card-content>
+      <form class="reservation-form" [formGroup]="form" (ngSubmit)="onCreate()" novalidate
+            [attr.aria-label]="'reservation-form.form-label' | translate">
+
+        @if (sportsCentersStore.error()) {
+          <p class="form-message form-message-error" role="alert">{{ 'sports-centers.load-error' | translate }}</p>
+        }
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation-form.activity-type' | translate }}</mat-label>
+          <mat-select formControlName="activityType" required>
+            @for (activityType of activityTypes; track activityType) {
+              <mat-option [value]="activityType">{{ 'activity-types.' + activityType | translate }}</mat-option>
+            }
+          </mat-select>
+          @if (selectedOccupancy(); as occupancy) {
+            <mat-hint>
+              {{ 'reservation-form.sports-center' | translate }}: {{ occupancy.sportsCenter.name }} ·
+              {{ 'reservation-form.available-capacity' | translate: {capacity: occupancy.availableCapacity} }}
+            </mat-hint>
+          }
+          @if (form.controls.activityType.hasError('required')) {
+            <mat-error>{{ 'reservation-form.errors.activity-type-required' | translate }}</mat-error>
+          }
+        </mat-form-field>
+
+        @if (form.controls.activityType.value && !selectedOccupancy() && !sportsCentersStore.loading()) {
+          <p class="form-message form-message-error" role="alert">{{ 'reservation-form.errors.sports-center-not-found' | translate }}</p>
+        }
+
+        <app-current-temperature
+          [currentWeather]="weatherStore.currentWeather()"
+          [loading]="weatherStore.loading()"
+          [hasError]="!!weatherStore.error()"
+          (retry)="onRetryWeather()"/>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation-form.participant-name' | translate }}</mat-label>
+          <input matInput formControlName="participantName" autocomplete="name" required>
+          @if (form.controls.participantName.invalid) {
+            <mat-error>{{ 'reservation-form.errors.participant-name-required' | translate }}</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{ 'reservation-form.participants' | translate }}</mat-label>
+          <input matInput type="number" formControlName="participants" min="1" inputmode="numeric" required
+                 [attr.max]="selectedOccupancy()?.availableCapacity">
+          @if (form.controls.participants.hasError('required')) {
+            <mat-error>{{ 'reservation-form.errors.participants-required' | translate }}</mat-error>
+          } @else if (form.controls.participants.hasError('min')) {
+            <mat-error>{{ 'reservation-form.errors.participants-min' | translate }}</mat-error>
+          } @else if (form.controls.participants.hasError('max')) {
+            <mat-error>{{ 'reservation-form.errors.participants-max' | translate: {capacity: selectedOccupancy()?.availableCapacity} }}</mat-error>
+          }
+        </mat-form-field>
+
+        @if (selectedOccupancy() && weatherStore.error()) {
+          <p class="form-message form-message-error" role="alert">{{ 'reservation-form.errors.weather-required' | translate }}</p>
+        }
+        @if (saveFailed()) {
+          <p class="form-message form-message-error" role="alert">{{ 'reservation-form.errors.save-failed' | translate }}</p>
+        }
+
+        <div class="form-actions">
+          <button mat-stroked-button type="button" (click)="onCancel()">
+            {{ 'reservation-form.cancel' | translate }}
+          </button>
+          <button mat-flat-button type="submit" [disabled]="!canCreate()">
+            <mat-icon aria-hidden="true">event_available</mat-icon>
+            {{ 'reservation-form.create' | translate }}
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</section>

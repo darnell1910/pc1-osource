@@ -1,0 +1,23 @@
+.current-temperature {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--app-spacing-sm);
+  padding: var(--app-spacing-md);
+  border-radius: 12px;
+  background-color: var(--mat-sys-tertiary-container);
+  color: var(--mat-sys-on-tertiary-container);
+}
+
+.current-temperature-value {
+  font: var(--mat-sys-title-large);
+}
+
+.current-temperature-error {
+  flex: 1 1 240px;
+  color: var(--mat-sys-error);
+}
+
+.current-temperature-placeholder {
+  color: var(--mat-sys-on-surface-variant);
+}

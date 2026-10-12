@@ -1,0 +1,76 @@
+{
+  "toolbar": {
+    "title": "UrbanFit Sports Center Management Platform",
+    "logo-alt": "UrbanFit Sports Centers logo",
+    "toggle-navigation": "Toggle navigation menu"
+  },
+  "language-switcher": {
+    "label": "Interface language",
+    "languages": {
+      "en": "English",
+      "es": "Spanish"
+    }
+  },
+  "navigation": {
+    "label": "Main navigation",
+    "home": "Home",
+    "new-reservation": "New Reservation"
+  },
+  "home": {
+    "title": "Home",
+    "content": "Smart Reservations and Capacity Management for Sports Centers."
+  },
+  "sports-centers": {
+    "title": "My Sports Centers",
+    "loading": "Loading sports centers…",
+    "load-error": "The sports centers could not be loaded. Please make sure the API is running.",
+    "empty-list": "There are no sports centers registered."
+  },
+  "sports-center-summary": {
+    "reservations-label": "Reservations of {{name}}",
+    "participants": "{{count}} participants",
+    "empty": "Empty",
+    "total-participants": "Total Participants",
+    "available-capacity": "Available Capacity"
+  },
+  "activity-types": {
+    "fitness": "Fitness",
+    "yoga": "Yoga",
+    "swimming": "Swimming",
+    "cycling": "Cycling"
+  },
+  "reservation-form": {
+    "title": "New Reservation",
+    "subtitle": "Register Participants at Your Sports Center",
+    "form-label": "New reservation form",
+    "activity-type": "Activity type",
+    "participant-name": "Participant name",
+    "participants": "Participants",
+    "sports-center": "Sports center",
+    "available-capacity": "Available capacity: {{capacity}}",
+    "create": "Create",
+    "cancel": "Cancel",
+    "errors": {
+      "activity-type-required": "The activity type is required.",
+      "participant-name-required": "The participant name is required and cannot contain only spaces.",
+      "participants-required": "The number of participants is required.",
+      "participants-min": "The number of participants must be greater than zero.",
+      "participants-max": "The number of participants cannot exceed the available capacity ({{capacity}}).",
+      "sports-center-not-found": "There is no sports center for the selected activity type.",
+      "weather-required": "A valid current temperature is required to create the reservation.",
+      "save-failed": "The reservation could not be saved. Please try again."
+    }
+  },
+  "current-temperature": {
+    "label": "Current temperature",
+    "loading": "Querying the current temperature…",
+    "error": "The current temperature could not be obtained. The reservation cannot be created until a valid temperature is available.",
+    "retry": "Retry",
+    "placeholder": "Select an activity type to query the current temperature."
+  },
+  "page-not-found": {
+    "title": "Page not found",
+    "message": "The path \"{{path}}\" was not found.",
+    "go-home": "Back to Home"
+  }
+}
